@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[_techsnow]]></title>
-  <link href="http://TermiT.github.com/techsnow/atom.xml" rel="self"/>
-  <link href="http://TermiT.github.com/techsnow/"/>
-  <updated>2012-05-24T21:49:18+08:00</updated>
-  <id>http://TermiT.github.com/techsnow/</id>
+  <link href="http://www.techsnow.net/atom.xml" rel="self"/>
+  <link href="http://www.techsnow.net/"/>
+  <updated>2012-05-24T21:53:46+08:00</updated>
+  <id>http://www.techsnow.net/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Zombie Ninjas Attack: A survivor's retrospective]]></title>
-    <link href="http://TermiT.github.com/techsnow/blog/2012/05/24/zombie-ninjas-attack-a-survivors-retrospective/"/>
+    <link href="http://www.techsnow.net/blog/2012/05/24/zombie-ninjas-attack-a-survivors-retrospective/"/>
     <updated>2012-05-24T19:40:00+08:00</updated>
-    <id>http://TermiT.github.com/techsnow/blog/2012/05/24/zombie-ninjas-attack-a-survivors-retrospective</id>
+    <id>http://www.techsnow.net/blog/2012/05/24/zombie-ninjas-attack-a-survivors-retrospective</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
