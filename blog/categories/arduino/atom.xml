@@ -4,7 +4,7 @@
   <title><![CDATA[Category: arduino | _techsnow]]></title>
   <link href="http://termit.github.com/techsnow/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://termit.github.com/techsnow/"/>
-  <updated>2012-05-26T18:05:16+08:00</updated>
+  <updated>2012-05-26T18:07:16+08:00</updated>
   <id>http://termit.github.com/techsnow/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
@@ -25,6 +25,9 @@
 <p>and told: click the button, check the digits, enter the password and be happy. “Of course, security above all, but there still should be some place for comfort” – I’ve thought something like that and inspected all the electronic stuff I have.</p>
 
 <p>(Honestly speaking, I have been expecting to take a break in programming and deal with hardware for a pretty long time, so my laziness was not the only thing that motivated me here).</p>
+
+<!--more-->
+
 
 <h2>Scope of work analysis and components selection</h2>
 
