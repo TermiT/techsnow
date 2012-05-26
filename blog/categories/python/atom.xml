@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | _techsnow]]></title>
   <link href="http://termit.github.com/techsnow/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://termit.github.com/techsnow/"/>
-  <updated>2012-05-26T18:00:14+08:00</updated>
+  <updated>2012-05-26T18:03:23+08:00</updated>
   <id>http://termit.github.com/techsnow/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
@@ -19,7 +19,7 @@
     <updated>2012-05-26T16:53:00+08:00</updated>
     <id>http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera</id>
     <content type="html"><![CDATA[<p>Company, where I spend all the time when I am not having a rest, has very severe security requirements. <a href="http://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%B5%D0%BD_(%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8">Tokens</a>) are used for user authentication wherever possible. So they gave me this thing:
-<img src="/techsnow/images/2012-05-26/000.jpg">
+<img src="/images/2012-05-26/000.jpg">
 and told: click the button, check the digits, enter the password and be happy. “Of course, security above all, but there still should be some place for comfort” – I’ve thought something like that and inspected all the electronic stuff I have.</p>
 
 <p>(Honestly speaking, I have been expecting to take a break in programming and deal with hardware for a pretty long time, so my laziness was not the only thing that motivated me here).</p>
@@ -29,7 +29,7 @@ and told: click the button, check the digits, enter the password and be happy. �
 <p>First of all I’ve found old webcam Logitech QuickCam 3000, which was “retired” after purchase of a laptop with embedded webcam. The plan came up in a wink: capture token digits with a webcam, recognize them with a computer…Profit! Then I’ve found a servo drive (too lazy to click token button manually every time, right?), old USB hub (my laptop has only two USP ports with one of them always occupied by USB-Ethernet adapter) and Arduino board (God knows how did it come to me). For housing I’ve used LEGO construction kit, bought in advance for my one year old kid (it seems that now I know the reason of my wife’s ironic smile at the moment of purchase).</p>
 
 <p>Unfortunately, I don’t have the separate photos of donor devices, so I can impress you with assembled device only:
-<img src="/techsnow/images/2012-05-26/001.jpg">
+<img src="/images/2012-05-26/001.jpg">
 <em>(Clockwise:Computer, Arduino, webcam, token, LEGO, servo drive, USB hub)</em></p>
 
 <h2>Principle diagram and microcontroller software</h2>
@@ -45,35 +45,35 @@ and told: click the button, check the digits, enter the password and be happy. �
 <p>I am going to give the links to some parts of source code, responsible for the functionality being described – I believe that it is the optimal format of information display. All the source code can be checked <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py">at github</a>.</p>
 
 <p>First of all we <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L42">capture an image from the webacam</a>:
-<img src="/techsnow/images/2012-05-26/002.png"></p>
+<img src="/images/2012-05-26/002.png"></p>
 
 <p>Making it easier: webcam is motionless relating to the housing, token can move very slightly, so we can find the limits for possible positions of the token, <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L44-48">trim the webcam picture</a> and (just for our own comfort) <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L50-53">rotate an image</a> for 90˚:
-<img src="/techsnow/images/2012-05-26/003.png"></p>
+<img src="/images/2012-05-26/003.png"></p>
 
 <p>After that we <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L127-133">make some conversions</a>: convert the resulted image into grayscale and find its borders with <a href="http://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a> — it would be the borders of token LCD screen:
-<img src="/techsnow/images/2012-05-26/004.png"></p>
+<img src="/images/2012-05-26/004.png"></p>
 
 <p><a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L135-138">Finding contours</a> on resulted image. Contour is composed of an array of lines – we remove the lines which are shorter than defined length:
-<img src="/techsnow/images/2012-05-26/005.png"></p>
+<img src="/images/2012-05-26/005.png"></p>
 
 <p>Then we use straight-forward algorithm to <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L142-158">define four lines</a> of our LCD screen:
-<img src="/techsnow/images/2012-05-26/006.png"></p>
+<img src="/images/2012-05-26/006.png"></p>
 
 <p>We find <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L163-167">crossing points</a> of these lines and make several checks:
 *   <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L177-187">We check</a> that the length of vertical and horizontal lines is approximately the same and that total length of the lines is almost the same as LCD screen size (defined experimentally)
 *   <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L189-191">We check</a> that diagonals are almost equal (we need a rectangle – LCD screen)</p>
 
 <p><a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L193-196">Then</a> we define the turning angle of the token, turn the image for this angle and trim the LCD data:
-<img src="/techsnow/images/2012-05-26/007.png"></p>
+<img src="/images/2012-05-26/007.png"></p>
 
 <p>The most complicated is over. Now we have to make the resulted image more contrast. We put the image of blank LCD screen <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L259">into the memory</a> (before clicking the token button) and the we just <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L275">“substract”</a> this image from image with digits (after <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L263">pressing</a> the button):
-<img src="/techsnow/images/2012-05-26/008.png"></p>
+<img src="/images/2012-05-26/008.png"></p>
 
 <p>So, we have a black and white image now. Now we use another one <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L277-282">straight-forward</a> algorithm to find the optimal threshold to divide the image pixels to “black” and “white”, convert the image into black and white and <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L286-290">extract</a> symbols:
-<img src="/techsnow/images/2012-05-26/009.png"></p>
+<img src="/images/2012-05-26/009.png"></p>
 
 <p>And after that we just recognize the digits. No need to bother with neural networks and other stuff, since we have 7-segment indicator – there are 7 “points” which uniquely <a href="https://github.com/dreadatour/lazy/blob/master/lazy.py#L291">define</a> each digit:
-<img src="/techsnow/images/2012-05-26/010.png"></p>
+<img src="/images/2012-05-26/010.png"></p>
 
 <p>Just to be safe we recognize the digits from several frames – if there is the same result for 3 frames in a row, then recognition is considered successful and we display the result to a user via “growlnotify” program and copy the resulted code in the clipboard.</p>
 
