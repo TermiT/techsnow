@@ -4,7 +4,7 @@
   <title><![CDATA[Category: arduino | _techsnow]]></title>
   <link href="http://termit.github.com/techsnow/blog/categories/arduino/atom.xml" rel="self"/>
   <link href="http://termit.github.com/techsnow/"/>
-  <updated>2012-05-27T11:52:16+08:00</updated>
+  <updated>2012-05-27T11:54:00+08:00</updated>
   <id>http://termit.github.com/techsnow/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
@@ -18,8 +18,8 @@
     <link href="http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera/"/>
     <updated>2012-05-26T16:53:00+08:00</updated>
     <id>http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera</id>
-    <content type="html"><![CDATA[<p><em>Author:</em> Dreadatour ()
-<em>Source:</em> <a href="http://habrahabr.ru/post/143102/">http://habrahabr.ru/post/143102/</a></p>
+    <content type="html"><![CDATA[<p><strong>Author:</strong> Dreadatour
+<strong>Source:</strong> <a href="http://habrahabr.ru/post/143102/">http://habrahabr.ru/post/143102/</a></p>
 
 <p>Company, where I spend all the time when I am not having a rest, has very severe security requirements. <a href="http://en.wikipedia.org/wiki/Security_token">Tokens</a> are used for user authentication wherever possible. So they gave me this thing:</p>
 
