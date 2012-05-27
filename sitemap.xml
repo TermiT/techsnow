@@ -1,21 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>
-            http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera/
-        </loc>
+        <loc>http://techsnow.net/blog/2012/05/26/recognizing-token-image-with-camera/</loc>
         <lastmod>2012-05-27T11:53:53+08:00</lastmod>
     </url>
     <url>
-        <loc>http://termit.github.com/techsnow/about/</loc>
+        <loc>http://techsnow.net/about/</loc>
         <lastmod>2012-05-27T11:52:10+08:00</lastmod>
     </url>
     <url>
-        <loc>http://termit.github.com/techsnow/blog/archives/</loc>
+        <loc>http://techsnow.net/blog/archives/</loc>
         <lastmod>2012-05-27T11:53:53+08:00</lastmod>
     </url>
     <url>
-        <loc>http://termit.github.com/techsnow/</loc>
+        <loc>http://techsnow.net/</loc>
         <lastmod>2012-05-27T11:53:53+08:00</lastmod>
     </url>
 </urlset>

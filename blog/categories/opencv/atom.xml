@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: opencv | _techsnow]]></title>
-  <link href="http://termit.github.com/techsnow/blog/categories/opencv/atom.xml" rel="self"/>
-  <link href="http://termit.github.com/techsnow/"/>
-  <updated>2012-05-27T17:21:07+08:00</updated>
-  <id>http://termit.github.com/techsnow/</id>
+  <link href="http://techsnow.net/blog/categories/opencv/atom.xml" rel="self"/>
+  <link href="http://techsnow.net/"/>
+  <updated>2012-05-27T17:25:26+08:00</updated>
+  <id>http://techsnow.net/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recognizing token image with camera]]></title>
-    <link href="http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera/"/>
+    <link href="http://techsnow.net/blog/2012/05/26/recognizing-token-image-with-camera/"/>
     <updated>2012-05-26T16:53:00+08:00</updated>
-    <id>http://termit.github.com/techsnow/blog/2012/05/26/recognizing-token-image-with-camera</id>
+    <id>http://techsnow.net/blog/2012/05/26/recognizing-token-image-with-camera</id>
     <content type="html"><![CDATA[<p><strong>Author:</strong> Dreadatour
 <strong>Source:</strong> <a href="http://habrahabr.ru/post/143102/">http://habrahabr.ru/post/143102/</a></p>
 
