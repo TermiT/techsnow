@@ -4,7 +4,7 @@
   <title><![CDATA[Category: diy | _techsnow]]></title>
   <link href="http://techsnow.net/blog/categories/diy/atom.xml" rel="self"/>
   <link href="http://techsnow.net/"/>
-  <updated>2012-05-31T23:15:29+08:00</updated>
+  <updated>2012-06-01T22:44:45+08:00</updated>
   <id>http://techsnow.net/</id>
   <author>
     <name><![CDATA[Gennadiy Potapov]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Repairing The Display With Soda!]]></title>
+    <link href="http://techsnow.net/blog/2012/06/01/repairing-the-display-with-soda/"/>
+    <updated>2012-06-01T22:44:00+08:00</updated>
+    <id>http://techsnow.net/blog/2012/06/01/repairing-the-display-with-soda</id>
+    <content type="html"><![CDATA[<p><strong>Author:</strong> subvillion
+<strong>Source:</strong> <a href="http://habrahabr.ru/post/144043/">http://habrahabr.ru/post/144043/</a></p>
+
+<p>It looks like plastic mines are almost depleted nowadays. The bigger and heavier a display is, the smaller and thinner is its stand. And the 23” Samsung monitor has shared the dandelion’s fate. Occasionally I’ve found the method to repair plastic breaks with baking soda. The process of display stand repair is under cut.</p>
+
+<p>Inner hub (allowing horizontal inclination) was broken in the place of its attachment to the stand. I don’t know the engineers’ idea behind, but 2 screws were holding 15 pounds of display.</p>
+
+<p><img src="/images/2012-06-01/000.png"></p>
+
+<!--more-->
+
+
+<p>Totally ripped out! We need either a donor part or immobilize it or grind something out somehow. Epoxy is not an option for plastic.</p>
+
+<p><img src="/images/2012-06-01/001.jpg"></p>
+
+<p>Throwing the fragments away, since there will be no use of them. Covering the damaged places with soda.</p>
+
+<p><img src="/images/2012-06-01/002.jpg"></p>
+
+<p>Now I add enough volume of <a href="http://en.wikipedia.org/wiki/Cyanoacrylate">cyanoacrylate</a> or Super Glue to moisture all the soda.</p>
+
+<p><strong>UPD</strong> It should be classic liquid glue, not a gel. Polymerization goes instantly, mixture stiffens in a couple of seconds.</p>
+
+<p><img src="/images/2012-06-01/003.jpg"></p>
+
+<p>Resulting “swatch” is very firm, it is harder to grind it out than original plastic. How we need to burnish it and drill screw holes.</p>
+
+<p><img src="/images/2012-06-01/004.jpg"></p>
+
+<p>That’s it!</p>
+
+<p><img src="/images/2012-06-01/005.jpg"></p>
+
+<p>That’s what Wikipedia tells us about that:</p>
+
+<p>“When added to baking soda (sodium bicarbonate), cyanoacrylate glue forms a hard, lightweight filler/adhesive (baking soda is first used to fill a gap then the adhesive is dropped onto the baking soda). This works well with porous materials that the glue does not work well with alone. This method is sometimes used by aircraft modelers to assemble or repair polystyrene foam parts. It is also used to repair small nicks in the leading edge of composite propeller blades on light aircraft. Note that the reaction between cyanoacrylate and baking soda is very exothermic (heat-producing) and also produces noxious vapors.”</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recognizing token image with camera]]></title>
